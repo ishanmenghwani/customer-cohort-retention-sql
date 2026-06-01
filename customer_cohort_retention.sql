@@ -50,7 +50,7 @@ INSERT INTO transactions VALUES
 (20, 12, '2023-04-05', 499.00);
 
 
--- Transaction ranking and cumulative spend using window functions
+-- Transaction ranking and cumulative spend
 SELECT
     t.user_id,
     u.plan,
@@ -70,7 +70,7 @@ JOIN users u ON t.user_id = u.user_id
 ORDER BY u.plan, t.amount DESC;
 
 
--- Month-over-month revenue growth using LAG
+-- Month-over-month revenue growth 
 WITH monthly_revenue AS (
     SELECT
         DATE_FORMAT(txn_date, '%Y-%m') AS month,
